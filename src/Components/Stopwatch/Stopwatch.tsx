@@ -1,18 +1,24 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./Stopwatch.css";
+
 const Stopwatch = () => {
   const [time, setTime] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
+  const intervalId = useRef<number>(0);
   useEffect(() => {
-    let intervalId;
     if (isRunning) {
-      intervalId = setInterval(() => setTime(prevTime => prevTime + 1), 10);
+      intervalId.current = setInterval(
+        () => setTime((prevTime) => prevTime + 1),
+        10
+      );
     }
-    return () => clearInterval(intervalId);
+    return () => clearInterval(intervalId.current);
   }, [isRunning]);
+
   useEffect(() => {
-    return () => clearInterval(intervalId);
+    return () => clearInterval(intervalId.current);
   }, []);
+
   const toggleRunning = () => {
     setIsRunning(!isRunning);
   };
