@@ -26,7 +26,7 @@ const Stopwatch = () => {
     setTime(0);
     setIsRunning(false);
   };
-  const formatTimeUnit = (unit) => {
+  const formatTimeUnit = (unit: number) => {
     return unit.toString().padStart(2, "0");
   };
   const hours = Math.floor(time / 360000);
