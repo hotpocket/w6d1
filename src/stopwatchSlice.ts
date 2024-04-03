@@ -19,16 +19,16 @@ export const stopwatchSlice = createSlice({
   initialState,
   reducers: {
     toggleRunning: (state) => {
-      console.log('toggling running');
+      // console.log('toggling running');
       state.running = !state.running;
     },
     reset: (state) => {
-      console.log('resetting');
+      // console.log('resetting');
       state.time = 0;
       state.running = false;
     },
     incrementTime: (state) => {
-      console.log('incrementing time');
+      // console.log('incrementing time');
       state.time += 1;
     },
     setTime: (state, action) => {
