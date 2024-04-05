@@ -14,5 +14,9 @@ The store loaded in this step is created via the redux-toolkit __[`configureStor
 
 `Stopwatch.tsx` - Grab state via `useSelector` and use this state instead of `useState`.  Grab a dispatcher via `useDispatch()` for updating state.
 
+## Building
+To build the project run `npm run build` to use the vite bundler.   An attempt was made to use grunt but it doesn't understand modern things like es6 imports or typescript.  The efforts made therein were fraught with peril and ultimately fruitless.  The decision to abort this attempt was made in the interest of time and the desire to use modern supported tools for modern supported conventions.
+
+
 
 
